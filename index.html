@@ -13,19 +13,19 @@
       flex-direction: column;
       align-items: center;
     }
-    body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  border: 5px solid black; /* Change thickness if needed */
-  pointer-events: none;
-  box-sizing: border-box;
-  z-index: 9999;
-}
 
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      border: 5px solid black;
+      pointer-events: none;
+      box-sizing: border-box;
+      z-index: 9999;
+    }
 
     .top-image {
       width: 1000px;
@@ -91,31 +91,33 @@
       margin-bottom: 10px;
     }
 
-    .buy-button {
-      background-color: hotpink;
-      color: black;
-      font-weight: bold;
-      border: 2px solid black;
-      padding: 12px;
+    .buy-button form {
       width: 100%;
-      font-size: 16px;
-      cursor: pointer;
-      margin-bottom: 15px;
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 1;
     }
 
-    .buy-button:hover {
-      box-shadow: 6px 8px 0 black;
-      transform: translateY(-3px);
+    .razorpay-payment-button {
+      background-color: hotpink !important;
+      color: black !important;
+      font-weight: bold !important;
+      border: 2px solid black !important;
+      padding: 12px !important;
+      width: 100% !important;
+      font-size: 16px !important;
+      cursor: pointer !important;
+      margin-bottom: 15px !important;
+      transition: all 0.3s ease !important;
+      position: relative !important;
+      z-index: 1 !important;
     }
 
+    .razorpay-payment-button:hover {
+      box-shadow: 6px 8px 0 black !important;
+      transform: translateY(-3px) !important;
+    }
   </style>
 </head>
 <body>
 
-<!-- 🔼 Image above main box -->
 <img class="top-image" src="1.png" alt="DevVault Preview Image">
 
 <div class="main-wrapper">
@@ -144,7 +146,14 @@
 
     <div class="right">
       <div class="price">₹999</div>
-      <button class="buy-button">I want this!</button>
+
+      <!-- Razorpay Button Embed -->
+      <div class="buy-button">
+        <form>
+          <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_QYGCIbNBuA5DRJ" async></script>
+        </form>
+      </div>
+
     </div>
   </div>
 </div>
