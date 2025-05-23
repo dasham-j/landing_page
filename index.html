@@ -15,18 +15,19 @@
       align-items: center;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      border: 5px solid black;
-      pointer-events: none;
-      box-sizing: border-box;
-      z-index: 9999;
-    }
+    body {
+  position: relative;
+  border: 3px solid black;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 40px 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
 
     .top-image {
       width: 1200px;
