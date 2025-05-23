@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevVault Template Layout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: 5px solid black; /* Change thickness if needed */
+  pointer-events: none;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+
+    .top-image {
+      width: 1000px;
+      max-width: 95vw;
+      max-height: 400px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .main-wrapper {
+      width: 1000px;
+      max-width: 95vw;
+      background: white;
+      border: 1px solid black;
+    }
+
+    .header {
+      font-size: 32px;
+      font-weight: bold;
+      padding: 20px;
+      border-bottom: 1px solid black;
+    }
+
+    .content {
+      display: flex;
+      border-bottom: 1px solid black;
+    }
+
+    .left {
+      width: 70%;
+      border-right: 1px solid black;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .whats-inside-box {
+      border: 1px solid black;
+      padding: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-top: 20px;
+      height: 180px;
+      overflow-y: auto;
+    }
+
+    .right {
+      width: 30%;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .buy-button {
+      background-color: hotpink;
+      color: black;
+      font-weight: bold;
+      border: 2px solid black;
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .buy-button:hover {
+      box-shadow: 6px 8px 0 black;
+      transform: translateY(-3px);
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- 🔼 Image above main box -->
+<img class="top-image" src="1.png" alt="DevVault Preview Image">
+
+<div class="main-wrapper">
+  <div class="header">DevVault OS notion template</div>
+  
+  <div class="content">
+    <div class="left">
+      <div class="description">
+        DevVault isn’t just another Notion template — it’s your full-stack productivity engine built by devs, for devs. Whether you’re building projects, debugging code, or preparing for interviews, DevVault keeps everything structured, searchable, and supercharged.
+      </div>
+
+      <div class="whats-inside-box">
+        <p><strong>What’s Inside:</strong><br>
+        • Bug & Debug Hub – track, log, and squash errors with ease<br>
+        • Code Snippet Vault – organize reusable code for all languages<br>
+        • Build Blueprint – plan and track all your dev projects<br>
+        • Learning Tracker – stay on top of roadmaps, cheat sheets & notes<br>
+        • Project Idea Vault – never lose a million-dollar app idea again<br>
+        • Documentation Manager – centralize your personal docs, logs, and guides<br>
+        • GitHub Manager – track issues, contributions & repo insights<br>
+        • Growth Graph – visualize your dev journey like a boss<br>
+        • Dev Search Widget – search Stack Overflow, GitHub, Reddit & more<br>
+        • AI Assistant – integrated coding help (with Gemini API)</p>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="price">₹999</div>
+      <button class="buy-button">I want this!</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
