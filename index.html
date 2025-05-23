@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>DevVault Template Layout</title>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
@@ -43,15 +44,15 @@
       gap: 10px;
       margin-bottom: 20px;
       box-sizing: border-box;
+      flex-wrap: wrap;
     }
 
     .three-images img {
+      flex: 1 1 30%;
+      max-width: 100%;
       height: 200px;
       object-fit: cover;
-      flex: 1;
       border: 1px solid black;
-      max-width: 100%;
-      overflow: hidden;
     }
 
     .main-wrapper {
@@ -66,18 +67,30 @@
       font-weight: bold;
       padding: 20px;
       border-bottom: 1px solid black;
+      text-align: center;
     }
 
     .content {
       display: flex;
+      flex-wrap: wrap;
       border-bottom: 1px solid black;
+    }
+
+    .left, .right {
+      box-sizing: border-box;
+      padding: 20px;
     }
 
     .left {
       width: 70%;
       border-right: 1px solid black;
-      padding: 20px;
-      box-sizing: border-box;
+    }
+
+    .right {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .description {
@@ -93,15 +106,6 @@
       margin-top: 20px;
       height: 180px;
       overflow-y: auto;
-    }
-
-    .right {
-      width: 30%;
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     .price {
@@ -129,23 +133,46 @@
       box-shadow: 6px 8px 0 black !important;
       transform: translateY(-3px) !important;
     }
+
+    /* 🔽 Responsive Styles */
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+
+      .left, .right {
+        width: 100%;
+        border-right: none;
+        border-top: 1px solid black;
+      }
+
+      .three-images {
+        flex-direction: column;
+      }
+
+      .three-images img {
+        width: 100%;
+        height: auto;
+      }
+
+      .top-image {
+        height: auto;
+      }
+    }
   </style>
 </head>
 <body>
 
-<!-- 🔼 Top image -->
 <img class="top-image" src="1.png" alt="DevVault Preview Image">
 
-<!-- 🔽 Three side-by-side images -->
 <div class="three-images">
   <img src="2.png" alt="Image 2">
   <img src="3.png" alt="Image 3">
   <img src="4.png" alt="Image 4">
 </div>
 
-<!-- 🔽 White content box -->
 <div class="main-wrapper">
-  <div class="header">DevVault OS notion template</div>
+  <div class="header">DevVault OS Notion Template</div>
 
   <div class="content">
     <div class="left">
@@ -155,29 +182,25 @@
 
       <div class="whats-inside-box">
         <p><strong>What’s Inside:</strong><br>
-          • Bug & Debug Hub – track, log, and squash errors with ease<br>
-          • Code Snippet Vault – organize reusable code for all languages<br>
-          • Build Blueprint – plan and track all your dev projects<br>
-          • Learning Tracker – stay on top of roadmaps, cheat sheets & notes<br>
-          • Project Idea Vault – never lose a million-dollar app idea again<br>
-          • Documentation Manager – centralize your personal docs, logs, and guides<br>
-          • GitHub Manager – track issues, contributions & repo insights<br>
-          • Growth Graph – visualize your dev journey like a boss<br>
-          • Dev Search Widget – search Stack Overflow, GitHub, Reddit & more<br>
-          • AI Assistant – integrated coding help (with Gemini API)</p>
+        • Bug & Debug Hub – track, log, and squash errors with ease<br>
+        • Code Snippet Vault – organize reusable code for all languages<br>
+        • Build Blueprint – plan and track all your dev projects<br>
+        • Learning Tracker – stay on top of roadmaps, cheat sheets & notes<br>
+        • Project Idea Vault – never lose a million-dollar app idea again<br>
+        • Documentation Manager – centralize your personal docs, logs, and guides<br>
+        • GitHub Manager – track issues, contributions & repo insights<br>
+        • Growth Graph – visualize your dev journey like a boss<br>
+        • Dev Search Widget – search Stack Overflow, GitHub, Reddit & more<br>
+        • AI Assistant – integrated coding help (with Gemini API)</p>
       </div>
     </div>
 
     <div class="right">
       <div class="price">₹999</div>
-
-      <!-- Razorpay Payment Button Embedded -->
-      <div class="buy-button">
-        <form>
-          <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_QYGCIbNBuA5DRJ" async></script>
-        </form>
-      </div>
-
+      <!-- Razorpay Button Embed -->
+      <form>
+        <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_QYGCIbNBuA5DRJ" async></script>
+      </form>
     </div>
   </div>
 </div>
